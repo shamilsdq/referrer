@@ -1,0 +1,67 @@
+# Ignore bundler config
+/.bundle
+
+# Ignore all SQLite databases
+/db/*.sqlite3*
+
+# Ignore database.yml file
+/config/database.yml
+
+# Ignore all logfiles
+/log/*
+/tmp
+/db/backups
+/public/uploads
+/uploads/*
+*.DS_Store
+.*swp
+.byebug_history
+
+# Ignore node packages
+node_modules
+
+# Rails specific ignores
+/storage
+/vendor
+test/reports
+test/fixtures
+/public/packs
+/public/assets
+/public/packs-test
+
+# Ignore master key for decrypting credentials and more
+/config/master.key
+
+# Ignore environment variables
+/.env
+/.env.development.local
+
+# IDEs & Editors Ignores
+*~
+/tags
+.vscode-test
+
+# OS Ignores
+.directory
+.DS_Store
+.AppleDouble
+.LSOverride
+.localized
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.Spotlight-V100
+.Trashes
+
+# Tools and Package specific ignores
+.eslintcache
+yarn-error.log
+yarn-debug.log*
+.yarn-integrity
+.yarnrc
+yarn-1.22.5.cjs
+yarn-1.22.5.js
+
+# Ignore redis dump file
+dump.rdb
