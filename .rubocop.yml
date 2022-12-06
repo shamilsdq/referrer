@@ -1,0 +1,280 @@
+# cspell:Disable
+require:
+  - rubocop-rails
+
+AllCops:
+  TargetRubyVersion: 3.0.1
+  DisabledByDefault: true
+  NewCops: enable
+  Exclude:
+    - "app/javascript/**/*"
+    - "app/assets/**/*"
+    - "app/views/**/*.erb"
+    - "lib/tasks/**/*"
+    - ".vscode/**/*"
+    - ".husky/**/*"
+    - ".bundle/**/*"
+    - ".circleci/**/*"
+    - ".semaphore/**/*"
+    - "**/log/**/*"
+    - "**/public/**/*"
+    - "**/tmp/**/*"
+    - "**/templates/**/*"
+    - "**/vendor/**/*"
+    - "node_modules/**/*"
+    - "bin/**/*"
+    - "config/webpack/**/*"
+    - "db/schema.rb"
+
+
+# ACCESS MODIFIER RULES
+
+Layout/EmptyLinesAroundAccessModifier:
+  Enabled: true
+
+Lint/UselessAccessModifier:
+  Enabled: true
+
+Style/AccessModifierDeclarations:
+  Enabled: true
+
+Layout/AccessModifierIndentation:
+  Enabled: true
+
+# COMMENT RULES
+
+Layout/CommentIndentation:
+  Enabled: true
+
+Layout/EmptyLineAfterMagicComment:
+  Enabled: true
+
+Style/FrozenStringLiteralComment:
+  Enabled: true
+  EnforcedStyle: always
+  SafeAutoCorrect: true
+
+# CLASS RULES
+
+Layout/ClassStructure:
+  Enabled: true
+  Description: "Enforces a canonical order of definitions within a class body."
+  StyleGuide: "https://github.com/bbatsov/ruby-style-guide#consistent-classes"
+
+Layout/EmptyLinesAroundClassBody:
+  Enabled: true
+
+# METHOD RULES
+
+Layout/EmptyLineBetweenDefs:
+  Enabled: true
+
+Layout/DotPosition:
+  Enabled: true
+  EnforcedStyle: leading
+
+Lint/ParenthesesAsGroupedExpression:
+  Enabled: true
+
+Lint/RequireParentheses:
+  Enabled: true
+
+Style/RedundantReturn:
+  Enabled: true
+  AllowMultipleReturnValues: true
+
+Layout/SpaceBeforeFirstArg:
+  Enabled: true
+
+Style/DefWithParentheses:
+  Enabled: true
+
+Style/MethodDefParentheses:
+  Enabled: true
+
+Layout/SpaceAroundEqualsInParameterDefault:
+  Enabled: true
+
+Layout/FirstMethodArgumentLineBreak:
+  Enabled: true
+
+Layout/IndentationConsistency:
+  Enabled: true
+  EnforcedStyle: indented_internal_methods
+
+Layout/MultilineMethodCallIndentation:
+  Enabled: true
+  EnforcedStyle: indented
+
+Layout/FirstParameterIndentation:
+  Enabled: true
+  EnforcedStyle: consistent
+
+Layout/FirstArgumentIndentation:
+  Enabled: true
+  EnforcedStyle: consistent
+
+Layout/ArgumentAlignment:
+  Enabled: true
+  EnforcedStyle: with_fixed_indentation
+
+Layout/EmptyLinesAroundMethodBody:
+  Enabled: true
+
+# HASH RULES
+
+Layout/HashAlignment:
+  Enabled: true
+  EnforcedColonStyle: key
+  EnforcedLastArgumentHashStyle: always_inspect
+
+Layout/FirstHashElementLineBreak:
+  Enabled: true
+
+Layout/MultilineHashBraceLayout:
+  Enabled: true
+  EnforcedStyle: new_line
+
+Layout/FirstHashElementIndentation:
+  Enabled: true
+  EnforcedStyle: consistent
+
+Style/HashSyntax:
+  Enabled: true
+
+Layout/SpaceInsideHashLiteralBraces:
+  Enabled: true
+
+Style/TrailingCommaInHashLiteral:
+  Enabled: true
+
+# MISC WHITESPACE RULES
+
+Layout/SpaceAfterColon:
+  Enabled: true
+
+Layout/SpaceAfterComma:
+  Enabled: true
+
+Layout/SpaceAroundKeyword:
+  Enabled: true
+
+Layout/SpaceAroundOperators:
+  Enabled: true
+  AllowForAlignment: true
+
+Layout/SpaceBeforeComma:
+  Enabled: true
+
+Layout/SpaceBeforeBlockBraces:
+  Enabled: true
+
+Layout/SpaceInsideBlockBraces:
+  Enabled: true
+
+Layout/SpaceInsideParens:
+  Enabled: true
+
+Layout/TrailingWhitespace:
+  Enabled: true
+
+Layout/LeadingCommentSpace:
+  Enabled: true
+
+# EMPTY LINE RULES
+
+Layout/EndOfLine:
+  Enabled: true
+  EnforcedStyle: lf
+
+Layout/EmptyLinesAroundModuleBody:
+  Enabled: true
+
+Layout/EmptyLineAfterGuardClause:
+  Enabled: true
+
+Layout/TrailingEmptyLines:
+  Enabled: true
+
+Layout/EmptyLines:
+  Enabled: true
+
+# VARIABLE NAMING CONVENTIONS
+
+Naming/MemoizedInstanceVariableName:
+  Enabled: true
+  EnforcedStyleForLeadingUnderscores: required
+
+Style/AndOr:
+  Enabled: true
+
+Layout/CaseIndentation:
+  Enabled: true
+
+Layout/LineLength:
+  Enabled: true
+  Max: 120
+  IgnoredPatterns: [
+    '^\s*#', 
+    '^\s*"', 
+    "^\\s*'", 
+    '"$', 
+    "'$", 
+    '\/$', 
+  ]
+
+Layout/IndentationWidth:
+  Enabled: true
+  Width: 2
+
+Layout/IndentationStyle:
+  Enabled: true
+  EnforcedStyle: spaces
+
+Layout/ExtraSpacing:
+  Enabled: true
+  AllowForAlignment: false
+
+Style/ParenthesesAroundCondition:
+  Enabled: true
+
+Style/StringLiterals:
+  Enabled: true
+  EnforcedStyle: double_quotes
+
+Style/RedundantPercentQ:
+  Enabled: true
+
+Layout/EndAlignment:
+  Enabled: true
+  EnforcedStyleAlignWith: variable
+
+Style/Semicolon:
+  Enabled: true
+  AllowAsExpressionSeparator: false
+
+Lint/BooleanSymbol:
+  Enabled: true
+
+# FLOW STATEMENT RULES
+
+Lint/AssignmentInCondition:
+  Enabled: true
+  AllowSafeAssignment: true
+
+# BUNDLER COP RULES
+
+Bundler/OrderedGems:
+  Enabled: true
+  TreatCommentsAsGroupSeparators: true
+
+# RAILS COP RULES
+
+Rails:
+  Enabled: false
+
+Rails/Date:
+  Enabled: true
+
+Rails/TimeZone:
+  Enabled: true
