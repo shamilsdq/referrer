@@ -70,3 +70,6 @@ gem "webpacker"
 
 # For handling authentication [https://github.com/heartcombo/devise]
 gem "devise"
+
+# For handling Json Web Tokens [https://github.com/jwt/ruby-jwt]
+gem "jwt"
