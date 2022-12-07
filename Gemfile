@@ -67,3 +67,6 @@ end
 
 # For compiling and bundling JavaScript [https://github.com/rails/webpacker]
 gem "webpacker"
+
+# For handling authentication [https://github.com/heartcombo/devise]
+gem "devise"
