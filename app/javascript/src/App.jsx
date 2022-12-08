@@ -1,17 +1,28 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { Container } from "@mui/material";
 
-import { configureHeaders } from "./apis/axios";
-
+import {
+    setDefaultHeaders,
+    setAuthHeaders,
+    registerIntercepts,
+} from "./apis/axios";
 import Loader from "./components/Common/Loader";
 import Login from "./components/Login";
 import Dashboard from "./components/Dashboard";
-import { Container } from "@mui/material";
 
 const App = () => {
     const [isLoading, setIsLoading] = useState(true);
 
-    useEffect(() => configureHeaders(setIsLoading), []);
+    const authToken = localStorage.getItem("authToken");
+    const hasAuthToken = !!authToken;
+
+    useEffect(() => {
+        registerIntercepts();
+        setDefaultHeaders();
+        if (authToken) setAuthHeaders(authToken);
+        setIsLoading(false);
+    }, []);
 
     if (isLoading) {
         return <Loader />;
@@ -21,7 +32,10 @@ const App = () => {
         <Container maxWidth="md" sx={{ height: "100%" }}>
             <BrowserRouter>
                 <Routes>
-                    <Route path="/login" element={<Login />} />
+                    <Route
+                        path="/login"
+                        element={hasAuthToken ? <Navigate to="/" /> : <Login />}
+                    />
                     <Route path="/" element={<Dashboard />} />
                 </Routes>
             </BrowserRouter>
