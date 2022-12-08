@@ -1,7 +1,8 @@
 import React from "react";
-import { Box, TextField, Button } from "@mui/material";
+import { Box, TextField } from "@mui/material";
+import { LoadingButton } from "@mui/lab";
 
-const Form = ({ handleSubmit }) => (
+const Form = ({ handleSubmit, isSubmitting }) => (
     <Box
         component="form"
         onSubmit={handleSubmit}
@@ -28,9 +29,15 @@ const Form = ({ handleSubmit }) => (
             autoComplete="current-password"
             margin="normal"
         />
-        <Button type="submit" variant="contained" sx={{ mt: 3, mb: 2 }}>
+        <LoadingButton
+            type="submit"
+            variant="contained"
+            sx={{ mt: 3, mb: 2 }}
+            loading={isSubmitting}
+            loadingIndicator="Signing in..."
+        >
             Sign In
-        </Button>
+        </LoadingButton>
     </Box>
 );
 
