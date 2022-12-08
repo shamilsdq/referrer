@@ -1,13 +1,21 @@
 import React from "react";
-import { Container } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 
 import Form from "./Form";
 
 const Login = () => {
     return (
-        <Container maxWidth="xs" sx={{ my: 8 }}>
+        <Box
+            sx={{
+                height: "100%",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "center",
+            }}
+        >
             <Form handleSubmit={() => {}} />
-        </Container>
+        </Box>
     );
 };
 

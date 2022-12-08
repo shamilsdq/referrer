@@ -6,7 +6,7 @@ const Form = ({ handleSubmit }) => (
         component="form"
         onSubmit={handleSubmit}
         noValidate
-        sx={{ display: "flex", flexDirection: "column", width: "100%", mt: 3 }}
+        sx={{ display: "flex", flexDirection: "column", width: "400px" }}
     >
         <TextField
             required
