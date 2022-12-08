@@ -73,3 +73,6 @@ gem "devise"
 
 # For handling Json Web Tokens [https://github.com/jwt/ruby-jwt]
 gem "jwt"
+
+# For integrating React within Rails [https://github.com/reactjs/react-rails]
+gem "react-rails"
